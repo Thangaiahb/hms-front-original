@@ -5,7 +5,7 @@ import api from "../services/api";
 const Patients = () => {
     const [patients, setPatients] = useState([]);
     const [search, setSearch] = useState("");
-    const [loading, setLoading] = useState(true);
+
 
     // ✅ Popup States
     const [showModal, setShowModal] = useState(false);
@@ -26,10 +26,10 @@ const Patients = () => {
         try {
             const res = await api.get("/patients");
             setPatients(res.data);
-            setLoading(false);
+
         } catch (error) {
             console.log("Error fetching patients:", error);
-            setLoading(false);
+
         }
     };
 
